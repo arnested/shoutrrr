@@ -327,10 +327,11 @@
 <blockquote>
 <p>zulip://<strong><code>bot-mail</code></strong>:<strong><code>bot-key</code></strong>@<strong><code>zulip-domain</code></strong>/?stream=<strong><code>name-or-id</code></strong>&amp;topic=<strong><code>name</code></strong></p>
 </blockquote>
-<p>Topic name is optional and can be given as a parameter to the Send method:</p>
+<p>Stream and topic are both optional and can be given as a parameter to the Send method:</p>
 <div class="codehilite"><pre><span></span><code>  <span class="nx">sender</span><span class="p">,</span> <span class="nx">__</span> <span class="o">:=</span> <span class="nx">shoutrrr</span><span class="p">.</span><span class="nx">CreateSender</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
 
   <span class="nx">params</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">Params</span><span class="p">)</span>
+  <span class="nx">params</span><span class="p">[</span><span class="s">&quot;stream&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;mystream&quot;</span>
   <span class="nx">params</span><span class="p">[</span><span class="s">&quot;topic&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;This is my topic&quot;</span>
 
   <span class="nx">sender</span><span class="p">.</span><span class="nx">Send</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">params</span><span class="p">)</span>
